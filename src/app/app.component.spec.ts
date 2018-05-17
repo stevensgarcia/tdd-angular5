@@ -1,5 +1,7 @@
-import { TestBed, async } from '@angular/core/testing';
+import { TestBed, async, ComponentFixture } from '@angular/core/testing';
+import { DebugElement } from '@angular/core';
 import { AppComponent } from './app.component';
+
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -8,20 +10,49 @@ describe('AppComponent', () => {
       ],
     }).compileComponents();
   }));
-  it('should create the app', async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
+
+  // ASSEMBLE
+  let fixture: ComponentFixture<AppComponent>;
+  let comp: AppComponent;
+  let app: DebugElement;
+
+  beforeEach(() => {
+    // ACT
+    fixture = TestBed.createComponent(AppComponent);
+    app = fixture.debugElement.componentInstance;
+    comp = fixture.componentInstance;
     expect(app).toBeTruthy();
+  });
+
+  // ASSERT
+  it(`component should be defined`, async(() => {
+    expect(app).toBeDefined();
   }));
-  it(`should have as title 'app'`, async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('app');
+  it(`List should be defined`, async(() => {
+    expect(comp.items).toBeDefined();
   }));
-  it('should render title in a h1 tag', async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to app!');
+  it(`should have 3 items`, async(() => {
+    expect(comp.items.length).toBe(3);
   }));
+  it(`should contain items`, async(() => {
+    expect(comp.items).toEqual(['test', 'execute', 'refactor']);
+  }));
+
+  describe('Testing add method', () => {
+    beforeEach(() => {
+      // ACT
+      comp.add('new-item');
+    });
+
+    // ASSERT
+  it(`should have 4 items in list`, async(() => {
+    expect(comp.items.length).toBe(4);
+  }));
+  it(`should add a new item at the end of list`, async(() => {
+    const lastIndexOfList: number = comp.items.length - 1;
+    expect(comp.items[lastIndexOfList]).toBe('new-item');
+  }));
+
+  })
+
 });

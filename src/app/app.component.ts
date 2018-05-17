@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'app';
+
+  items: string[];
+
+  constructor() {
+    this.items = ['test', 'execute', 'refactor'];
+  }
+
+  add(item: string): void {
+    this.items.push(item);
+  }
+
 }
