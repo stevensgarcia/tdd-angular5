@@ -2,6 +2,14 @@ import { TestBed, async, ComponentFixture } from '@angular/core/testing';
 import { DebugElement } from '@angular/core';
 import { AppComponent } from './app.component';
 
+
+/**
+  TODO:
+  [x] Keep a list of items: ['test', 'execute', 'refactor']
+  [x] Add an item to the list: ['test', 'execute', 'refactor', 'new-item']
+  [] Remove an item from the list: ['test', 'execute', 'refactor']
+  */
+
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -42,6 +50,7 @@ describe('AppComponent', () => {
     beforeEach(() => {
       // ACT
       comp.add('new-item');
+      console.log(comp.items);
     });
 
     // ASSERT
@@ -53,6 +62,6 @@ describe('AppComponent', () => {
     expect(comp.items[lastIndexOfList]).toBe('new-item');
   }));
 
-  })
+  });
 
 });
