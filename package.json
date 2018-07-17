@@ -6,9 +6,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build --prod",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
+    "webdriver-update": "webdriver-manager update",
+    "e2e": "protractor"
   },
   "private": true,
   "dependencies": {
