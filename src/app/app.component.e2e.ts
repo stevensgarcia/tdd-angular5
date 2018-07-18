@@ -7,16 +7,16 @@ describe('AppComponent Tests', () => {
     browser.get('');
   });
   it('Browser should have a defined title', () => {
-    expect(browser.getTitle()).toEqual('Angular Protractor');
+    expect<any>(browser.getTitle()).toEqual('Angular Protractor');
   });
   it('Should get the number of items as defined in item object', () => {
-    expect(todoListItems.count()).toBe(3);
+    expect<any>(todoListItems.count()).toBe(3);
   });
   it('Should get the first item text as defined', () => {
-    expect(todoListItems.first().getText()).toEqual('test');
+    expect<any>(todoListItems.first().getText()).toEqual('test');
   });
   it('Should get the last item text as defined', () => {
-    expect(todoListItems.last().getText()).toEqual('refactor');
+    expect<any>(todoListItems.last().getText()).toEqual('refactor');
   });
 
 });

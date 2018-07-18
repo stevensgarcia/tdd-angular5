@@ -9,16 +9,8 @@ exports.config = {
     './src/app/**/*.e2e.ts'
   ],
   capabilities: {
-    'browserName': 'chrome',
-    'chromeOptions': {
-      'args': ['show-fps-counter=true']
-    }
-  },
-  multiCapabilities: [{
-    'browserName': 'firefox'
-  }, {
     'browserName': 'chrome'
-  }],
+  },
   directConnect: true,
   baseUrl: 'http://localhost:4200/',
   framework: 'jasmine',
