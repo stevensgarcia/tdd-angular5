@@ -1,8 +1,8 @@
 import {} from 'jasmine';
-import {browser, element, by, By, $, $$} from 'protractor';
+import {browser, element, by, By, $, $$, ElementArrayFinder} from 'protractor';
 
 describe('AppComponent Tests', () => {
-  const todoListItems = element.all(by.css('li'));
+  const todoListItems: ElementArrayFinder = element.all(by.css('li'));
   beforeEach(() => {
     browser.get('');
   });
