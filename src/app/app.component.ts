@@ -17,4 +17,8 @@ export class AppComponent {
     this.items.push(item);
   }
 
+  remove(): void {
+    this.items.pop();
+  }
+
 }
