@@ -11,6 +11,12 @@ import { AppComponent } from './app.component';
   */
 
 describe('AppComponent', () => {
+
+  // ASSEMBLE
+  let fixture: ComponentFixture<AppComponent>;
+  let comp: AppComponent;
+  let template: DebugElement;
+
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
@@ -18,11 +24,6 @@ describe('AppComponent', () => {
       ],
     }).compileComponents();
   }));
-
-  // ASSEMBLE
-  let fixture: ComponentFixture<AppComponent>;
-  let comp: AppComponent;
-  let template: DebugElement;
 
   beforeEach(() => {
     // ACT: instancear y verificar existencia
